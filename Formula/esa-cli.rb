@@ -1,16 +1,13 @@
 class EsaCli < Formula
-  desc "Command line tool for esa.io"
+  desc "CLI tool for managing esa.io articles"
   homepage "https://github.com/shellme/esa-cli"
-  version "0.1.0"
   license "MIT"
-
-  if OS.mac?
-    url "https://github.com/shellme/esa-cli/releases/download/v0.1.0/esa-cli-darwin-universal.tar.gz"
-    sha256 "71ad50e126b9aa1fa4c6f0e7319cb1fffcb50ed67cef14beeeec315f19cb157c"
-  end
+  version "0.1.3"
+  url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli-darwin-universal.tar.gz"
+  sha256 "f65f01d5c862bcf720f498a0a05fa470df0c4f3210c0007aa955c080d4c27c99"
 
   def install
-    bin.install "esa-cli-darwin-universal" => "esa-cli"
+    bin.install "esa-cli"
     
     # 設定ファイルのテンプレートを作成
     (etc/"esa-cli").mkpath
