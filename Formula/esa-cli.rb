@@ -5,21 +5,17 @@ class EsaCli < Formula
   version "0.2.7"
   
   if Hardware::CPU.arm?
-    url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli_darwin_arm64.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli_#{version}_darwin_arm64.tar.gz"
+    sha256 "3b4955c5b0bf8705fa385ec971752c6f8b64f4a81ca5acf4b62f6ac937d8afa0"
   else
-    url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli_darwin_amd64_v1.tar.gz"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli_#{version}_darwin_amd64.tar.gz"
+    sha256 "e2de85abdfc746ff3a81354d6c7ab6b6cf9ef2f08147f38f52346031745ff15b"
   end
 
   depends_on "go" => [">=1.16", :build]
 
   def install
-    if Hardware::CPU.arm?
-      bin.install "esa-cli" => "esa-cli"
-    else
-      bin.install "esa-cli" => "esa-cli"
-    end
+    bin.install "esa-cli" => "esa-cli"
 
     # 設定ファイルのテンプレートを作成
     (etc/"esa-cli").mkpath
