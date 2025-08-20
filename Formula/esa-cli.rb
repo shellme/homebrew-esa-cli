@@ -12,19 +12,22 @@ class EsaCli < Formula
     sha256 "e2de85abdfc746ff3a81354d6c7ab6b6cf9ef2f08147f38f52346031745ff15b"
   end
 
-  depends_on "go" => [">=1.16", :build]
+  depends_on "go" => [>=1.16", :build]
 
   def install
     bin.install "esa-cli" => "esa-cli"
 
-    # 設定ファイルのテンプレートを作成
+    # 設定ファイルのテンプレートを作成（既存ファイルがある場合は上書きしない）
     (etc/"esa-cli").mkpath
-    (etc/"esa-cli/config.template").write <<~EOS
-      {
-        "team_name": "your-team-name",
-        "access_token": ""
-      }
-    EOS
+    config_template = etc/"esa-cli/config.template"
+    unless config_template.exist?
+      config_template.write <<~EOS
+        {
+          "team_name": "your-team-name",
+          "access_token": ""
+        }
+      EOS
+    end
   end
 
   def caveats
