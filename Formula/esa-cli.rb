@@ -2,17 +2,17 @@ class EsaCli < Formula
   desc "CLI tool for managing esa.io articles"
   homepage "https://github.com/shellme/esa-cli"
   license "MIT"
-  version "0.2.7"
+  version "0.2.8"
   
   if Hardware::CPU.arm?
     url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli_#{version}_darwin_arm64.tar.gz"
-    sha256 "3b4955c5b0bf8705fa385ec971752c6f8b64f4a81ca5acf4b62f6ac937d8afa0"
+    sha256 "585f7a6c6df6a7ee57eeb28386ccb25752a5a509e08cc90903664a6115f1cdcf"
   else
     url "https://github.com/shellme/esa-cli/releases/download/v#{version}/esa-cli_#{version}_darwin_amd64.tar.gz"
-    sha256 "e2de85abdfc746ff3a81354d6c7ab6b6cf9ef2f08147f38f52346031745ff15b"
+    sha256 "2a97f51b5fe48d0de499b14299346f748283d7876a4a533213c1c4aa01a03e82"
   end
 
-  depends_on "go" => [>=1.16", :build]
+  depends_on "go" => [">=1.16", :build]
 
   def install
     bin.install "esa-cli" => "esa-cli"
@@ -32,7 +32,7 @@ class EsaCli < Formula
 
   def caveats
     <<~EOS
-      🎉 esa-cli がインストールされました！
+      �� esa-cli がインストールされました！
 
       📋 次のステップ:
       1. esa-cli setup で初期設定
@@ -40,7 +40,7 @@ class EsaCli < Formula
       3. esa-cli fetch 123 で記事をダウンロード
 
       💡 詳しい使い方: https://github.com/shellme/esa-cli
-      🆘 サポート: GitHub Issues
+      �� サポート: GitHub Issues
     EOS
   end
 
