@@ -5,21 +5,21 @@
 class EsaCli < Formula
   desc "CLI tool for managing esa.io articles"
   homepage "https://github.com/shellme/esa-cli"
-  version "0.2.8"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/shellme/esa-cli/releases/download/v0.2.8/esa-cli_0.2.8_darwin_amd64.tar.gz"
-      sha256 "2a97f51b5fe48d0de499b14299346f748283d7876a4a533213c1c4aa01a03e82"
+      url "https://github.com/shellme/esa-cli/releases/download/v0.3.0/esa-cli_0.3.0_darwin_arm64.tar.gz"
+      sha256 "de1ee5fcd42d9f8a28a6efc70ae53cb0859f325087da8b8923bd431c9a0b0759"
 
       def install
         bin.install "esa-cli"
       end
     end
     on_arm do
-      url "https://github.com/shellme/esa-cli/releases/download/v0.2.8/esa-cli_0.2.8_darwin_arm64.tar.gz"
-      sha256 "585f7a6c6df6a7ee57eeb28386ccb25752a5a509e08cc90903664a6115f1cdcf"
+      url "https://github.com/shellme/esa-cli/releases/download/v0.3.0/esa-cli_0.3.0_darwin_arm64.tar.gz"
+      sha256 "3e6325775ac55af7de03c13ffbf9e699b429d1fcef5de1a10108231069ed9d26"
 
       def install
         bin.install "esa-cli"
@@ -30,8 +30,8 @@ class EsaCli < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/shellme/esa-cli/releases/download/v0.2.8/esa-cli_0.2.8_linux_amd64.tar.gz"
-        sha256 "f347831b29cd35266fe5bed66e67ee20c95223b29422c37fb82e0f6f766813b4"
+        url "https://github.com/shellme/esa-cli/releases/download/v0.3.0/esa-cli_0.3.0_darwin_arm64.tar.gz"
+        sha256 "350770277dbb6e304435968955bf1aa773844746f150add361009ff3dbfab1fa"
 
         def install
           bin.install "esa-cli"
@@ -40,8 +40,8 @@ class EsaCli < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/shellme/esa-cli/releases/download/v0.2.8/esa-cli_0.2.8_linux_arm64.tar.gz"
-        sha256 "d6b693ac13a37a258156a6b59455834f76682d34b60ec8f05b1cca59251b535b"
+        url "https://github.com/shellme/esa-cli/releases/download/v0.3.0/esa-cli_0.3.0_darwin_arm64.tar.gz"
+        sha256 "c6b994eefb03a8428cce459f68ada6291132b2c5032624b9cbe2cf4c142e96bf"
 
         def install
           bin.install "esa-cli"
